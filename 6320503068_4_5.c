@@ -10,17 +10,17 @@
                 scanf("%s",word);
                 if(strlen(word)<=50){
                     for( j=0 ; j<strlen(word) ; j++ ){
-                        if(strcmp(word[j],'A')){
+                        if(word[j]=='A'){
                             token=cup[2];
                             cup[2]=cup[1];
                             cup[1]=token;
                         }
-                        else if(strcmp(word[j],'B')){
+                        else if(word[j]=='B'){
                             token=cup[4];
                             cup[4]=cup[1];
                             cup[1]=token;
                         }
-                        else if(strcmp(word[j],'C')){
+                        else if(word[j]=='C'){
                             token=cup[3];
                             cup[3]=cup[1];
                             cup[1]=token;
@@ -28,7 +28,7 @@
                             cup[2]=cup[4];
                             cup[4]=token;
                         }
-                        else if(strcmp(word[j],'D')){
+                        else if(word[j]=='D'){
                             token=cup[2];
                             cup[2]=cup[1];
                             cup[1]=token;
@@ -36,7 +36,7 @@
                             cup[3]=cup[4];
                             cup[4]=token;
                         }
-                        else if(strcmp(word[j],'E')){
+                        else if(word[j]=='E'){
                             token=cup[4];
                             cup[4]=cup[1];
                             cup[1]=token;
@@ -47,7 +47,7 @@
                     }
                     for( j=0 ; j<4 ; j++ ){
                         if(cup[j]==1){
-                            printf("%d",j+1);
+                            printf("%d\n",j+1);
                         }
                     }
                 }
