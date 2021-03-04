@@ -22,5 +22,5 @@
                 }
             }
         }
-        printf("%d %d",best,worst)
+        printf("%d %d",best,worst);
     }
