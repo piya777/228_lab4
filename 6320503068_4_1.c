@@ -1,25 +1,29 @@
 #include<stdio.h>
-
-    void main(){
-
-        int n,g,s,b,i,max=0,min,best,worst;
-        scanf("%d",&n);
-        if(n>3&&n<=1000){
-            for( i=0 ; i<n ; i++ ){
-                scanf("%d %d %d",&g,&s,&b);
-                if(i==0){
-                    min=(g*4)+(s*2)+(b*1);
-                }
-                if(max<(g*4)+(s*2)+(b*1)){
-                    max=(g*4)+(s*2)+(b*1);
-                    best=i+1;
-                }
-                if(min>(g*4)+(s*2)+(b*1)){
-                    min=(g*4)+(s*2)+(b*1);
-                    worst=i+1;
-                }
-            }
-            printf("%d %d",best,worst);
-        }
-
+int main()
+{
+    int a,b,c,d,e,f,max=0,min=1000,x,z;
+    scanf("%d",&a);
+    int A[a][3],B[a-2];
+    for(b=0; b<a; b++)
+    {
+        scanf("%d %d %d",&A[b][0],&A[b][1],&A[b][2]);
     }
+    for(c=0; c<a-2; c++)
+    {
+        B[c]=A[c][0]*4+A[c][1]*2+A[c][2]
+             +A[c+1][0]*4+A[c+1][1]*2+A[c+1][2]
+             +A[c+2][0]*4+A[c+2][1]*2+A[c+2][2];
+        if(B[c]>max)
+        {
+            max=B[c];
+            x=c;
+        }
+        if(B[c]<min)
+        {
+            min=B[c];
+            z=c;
+        }
+    }
+    printf("%d %d",x+1,z+1);
+
+}
