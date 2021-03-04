@@ -1,29 +1,26 @@
 #include<stdio.h>
-int main()
-{
-    int a,b,c,d,e,f,max=0,min=1000,x,z;
-    scanf("%d",&a);
-    int A[a][3],B[a-2];
-    for(b=0; b<a; b++)
-    {
-        scanf("%d %d %d",&A[b][0],&A[b][1],&A[b][2]);
-    }
-    for(c=0; c<a-2; c++)
-    {
-        B[c]=A[c][0]*4+A[c][1]*2+A[c][2]
-             +A[c+1][0]*4+A[c+1][1]*2+A[c+1][2]
-             +A[c+2][0]*4+A[c+2][1]*2+A[c+2][2];
-        if(B[c]>max)
-        {
-            max=B[c];
-            x=c;
-        }
-        if(B[c]<min)
-        {
-            min=B[c];
-            z=c;
-        }
-    }
-    printf("%d %d",x+1,z+1);
 
-}
+    void main()
+    {
+        int n,i,max=0,min=1000,best,worst,A[n][3],B[n-2];
+        scanf("%d",&n);
+        for(i=0; i<n; i++)
+        {
+            scanf("%d %d %d",&A[i][0],&A[i][1],&A[i][2]);
+        }
+        for(i=0; i<n-2; i++)
+        {
+            B[i]=A[i][0]*4+A[i][1]*2+A[i][2]+A[i+1][0]*4+A[i+1][1]*2+A[i+1][2]+A[i+2][0]*4+A[i+2][1]*2+A[i+2][2];
+            if(B[i]>max||B[i]<min)
+            {
+                max=B[i];
+                if(B[i]>max){
+                    best=i+1;
+                }
+                else{
+                    worst=i+1;
+                }
+            }
+        }
+        printf("%d %d",best,worst);
+    }
