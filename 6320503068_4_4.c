@@ -1,24 +1,25 @@
 #include<stdio.h>
 #include<string.h>
     void main(){
-        char word[1000],no[11][5]={"i","of","the","on","at","for","with","a","an","in","and"};
-        int i,check=0;
-        scanf("%s",word);
-        char *use=strtok(word," ");
+        char word[1000] ,*use ,no[11][5]={"i","of","the","on","at","for","with","a","an","in","and"};
+        int i,j,check=0;
+        gets(word);
         use=strtok(word," ");
-        if(strlen(word)<=1000){
-            while(use!=NULL){
-                for(i=0;i<11;i++)
-                    if(strcmp(use,no[i])){
-                        check++;
-                    }
-                if(check==11)
-                {
-                    printf("%c",toupper(use[0]));
+        while(use!=NULL)
+        {
+            for(i=0;i<11;i++){
+                if(strcmp(use,no[i])){
+                    check++;
                 }
-                use=strtok(NULL," ");
-                check=0;
             }
+            if(j==0){
+                printf("%c",toupper(use[0]));
+            }
+            if(check==11){
+                printf("%c",toupper(use[0]));
+            }
+            use=strtok(NULL," ");
+            j++,check=0;
         }
 
     }
